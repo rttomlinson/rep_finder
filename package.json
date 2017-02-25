@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@rttomlinson/sunlight_api_wrapper": "^1.0.0"
+  }
 }
