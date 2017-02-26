@@ -1,34 +1,35 @@
-
-<section class="flex flex-column align-center"> 
-    <div class="rep-pic width-40">
-        <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{bioguideId}}.jpg">
-    </div>
-
-    <div class="contact-info">
-        <div class="phone-number">
-            <h4>Phone Number</h4>
-            <div>###-###-####</div>
+ <main class="container-fluid main-container">   
+    <section class="row text-center"> 
+        <div class="rep-pic col-xs-12">
+            <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{bioguideId}}.jpg">
         </div>
-        <div class="email">
-            <h4>Email</h4>
-            <div>superrepman@gmail.com</div>
+    
+        <div class="contact-info col-xs-12">
+            <div class="phone-number">
+                <h4>Phone Number</h4>
+                <div>###-###-####</div>
+            </div>
+            <div class="email">
+                <h4>Email</h4>
+                <div>superrepman@gmail.com</div>
+            </div>
         </div>
-    </div>
-</section>
-
-
-<section>
-    {{#each bills as |bill|}}
-    <article class="bill">
-        <div class="bill-id">
-            {{bill.bill_id}}
-        </div>
-        <div class="bill-title">
-            {{bill.bill_title}}
-        </div>
-        <div class="vote-record">
-            {{bill.recorded_vote}}
-        </div>
-    </article>
-    {{/each}}
-</section>
+    </section>
+    
+    
+    <section class="row">
+        {{#each bills as |bill|}}
+        <article class="bill col-xs-12 well">
+            <div class="bill-id">
+                {{bill.bill_id}}
+            </div>
+            <div class="bill-title">
+                {{bill.bill_title}}
+            </div>
+            <div class="vote-record">
+                {{bill.recorded_vote}}
+            </div>
+        </article>
+        {{/each}}
+    </section>
+</main>

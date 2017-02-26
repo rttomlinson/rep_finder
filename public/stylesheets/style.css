@@ -1,12 +1,9 @@
-.contain {
-  max-width: 650px;
-  margin: 0 auto;
-  width: 90vw;
-  background-color: lightgray;
+.main-container {
+  width: 80vw;
 }
 
 img {
-  width:100%;
+  max-width: 150px;
   height: auto;
 }
 
@@ -82,11 +79,6 @@ img {
 
 .width-40 {
   width: 40%;
-}
-
-.rep-pic {
-  max-width:150px;
-  margin: 0 20px;
 }
 
 .rep-info {
