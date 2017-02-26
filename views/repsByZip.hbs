@@ -1,0 +1,40 @@
+<header>
+    <h1>Your Reps</h1>
+    <div>Your zipcode: Location</div>
+</header>
+<main>
+    <section>
+        <h3>House</h3>
+        {{#each house as |rep|}}
+        <article>
+            <div class="rep-pic">
+                <i></i>
+            </div>
+            <div class="rep-name">
+                {{rep.fullName}}
+            </div>
+            <div class="rep-party">
+                {{rep.party}}
+            </div>
+        </article>
+        {{/each}}
+    </section>
+    <section>
+        <h3>Senate</h3>
+        {{#each senate as |rep|}}
+            <article>
+                <div class="rep-pic">
+                    <i></i>
+                </div>
+                <div class="rep-name">
+                    {{rep.fullName}}
+                </div>
+                <div class="rep-party">
+                    {{rep.party}}
+                </div>
+            </article>
+        {{/each}}
+    </section>
+</main>
+<footer>
+</footer>
