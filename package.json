@@ -1,15 +1,17 @@
 {
-  "name": "rep_finder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "rep-finder",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@rttomlinson/sunlight_api_wrapper": "^1.0.0"
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "hbs": "~4.0.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
   }
 }
