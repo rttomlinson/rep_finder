@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 let zip = require('./routes/zip');
+let repVote = require('./routes/rep_profile');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/rep', repVote);
 app.use('/zip', zip);
 app.use('/', index);
 app.use('/users', users);
