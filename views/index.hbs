@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Now served with hbs</h1>
+<p>Boom baby</p>
+<form id="find-reps" method="get" action="/zip/">
+    <div>
+        <label for="zipcode" form="find-reps">Zipcode</label>
+        <input type="text" id="zipcode" name="zipcode" form="find-reps" placeholder="Zipcode">
+    </div>
+    <button type="submit" form="find-reps">Find your reps!</button>
+</form>

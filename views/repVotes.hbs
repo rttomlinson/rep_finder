@@ -1,0 +1,15 @@
+<section>
+    {{#each bills as |bill|}}
+    <article class="bill">
+        <div class="bill-id">
+            {{bill.bill_id}}
+        </div>
+        <div class="bill-title">
+            {{bill.bill_title}}
+        </div>
+        <div class="vote-record">
+            {{bill.recorded_vote}}
+        </div>
+    </article>
+    {{/each}}
+</section>

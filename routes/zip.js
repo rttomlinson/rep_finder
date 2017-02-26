@@ -8,8 +8,8 @@ const Sunlight = require("@rttomlinson/sunlight_api_wrapper");
 let sunlight  = new Sunlight();
 
 /* GET home page. */
-router.get('/:zipcode', function(req, res, next) {
-    let zipcode = req.params.zipcode;
+router.get('/', function(req, res, next) {
+    let zipcode = req.query.zipcode;
     
     let repsByZip = sunlight.getRepsByZipcode(zipcode); //method falls return promises
     
