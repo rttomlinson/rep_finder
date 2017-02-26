@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
     
     repVotes.then(function onFulfill(data) {
         let bills = cleanVoteData(data);
-        res.render('repVotes', { "bills" : bills });
+        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId });
 
     }).catch(function onError(error) {
         console.log(error);

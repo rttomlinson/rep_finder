@@ -1,4 +1,4 @@
-body {
+.contain {
   max-width: 650px;
   margin: 0 auto;
   width: 90vw;
@@ -80,8 +80,19 @@ img {
   border-radius: 5px;
 }
 
-.rep-pic {
+.width-40 {
   width: 40%;
+}
+
+.rep-pic {
+  max-width:150px;
   margin: 0 20px;
 }
 
+.rep-info {
+  font-size: 5vw;
+}
+
+.padding-bot-10 {
+  padding-bottom: 10px;
+}

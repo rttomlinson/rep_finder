@@ -1,57 +1,57 @@
-<header class="center-inline">
-    <h1>Your Representatives</h1>
-    <div>Your zipcode: Location</div>
-</header>
-<main class="">
-    <section>
-        <div class="center-inline">
-            <h3 class="">House</h3>
-        </div>
-        {{#each house as |rep|}}
-        <div class="width-8 center-block soft-borders-5px">
-            <a href="/rep/?bioguide_id={{rep.bioguideId}}">
-                <article class="flex align-center">
-                    <div class="rep-pic">
-                        <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
-                    </div>
-                    <div class="rep-info">
-                        <div class="rep-name">
-                            {{rep.fullName}}
+    <header class="center-inline">
+        <h1>Your Representatives</h1>
+        <div>Your zipcode: Location</div>
+    </header>
+    <main class="">
+        <section>
+            <div class="center-inline">
+                <h3 class="">House</h3>
+            </div>
+            {{#each house as |rep|}}
+            <div class="width-8 center-block soft-borders-5px padding-bot-10">
+                <a href="/rep/?bioguide_id={{rep.bioguideId}}">
+                    <article class="flex align-center">
+                        <div class="rep-pic width-40">
+                            <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
                         </div>
-                        <div class="rep-party">
-                            {{rep.party}}
+                        <div class="rep-info">
+                            <div class="rep-name">
+                                {{rep.fullName}}
+                            </div>
+                            <div class="rep-party">
+                                {{rep.party}}
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </a>
-        </div>
-        {{/each}}
-        </div>
-    </section>
-    <section>
-        <div class="center-inline">
-            <h3>Senate</h3>
-        </div>
-        {{#each senate as |rep|}}
-        <div class="width-8 center-block soft-borders-5px">
-            <a href="/rep/?bioguide_id={{rep.bioguideId}}">
-                <article class="flex align-center">
-                    <div class="rep-pic">
-                        <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
-                    </div>
-                    <div class="rep-info">
-                        <div class="rep-name">
-                            {{rep.fullName}}
+                    </article>
+                </a>
+            </div>
+            {{/each}}
+            </div>
+        </section>
+        <section>
+            <div class="center-inline">
+                <h3>Senate</h3>
+            </div>
+            {{#each senate as |rep|}}
+            <div class="width-8 center-block soft-borders-5px padding-bot-10">
+                <a href="/rep/?bioguide_id={{rep.bioguideId}}">
+                    <article class="flex align-center">
+                        <div class="rep-pic width-40">
+                            <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
                         </div>
-                        <div class="rep-party">
-                            {{rep.party}}
+                        <div class="rep-info">
+                            <div class="rep-name">
+                                {{rep.fullName}}
+                            </div>
+                            <div class="rep-party">
+                                {{rep.party}}
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </a>
-        </div>
-        {{/each}}
-    </section>
-</main>
-<footer>
-</footer>
+                    </article>
+                </a>
+            </div>
+            {{/each}}
+        </section>
+    </main>
+    <footer>
+    </footer>
