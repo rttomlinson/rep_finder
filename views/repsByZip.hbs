@@ -1,38 +1,55 @@
-<header>
-    <h1>Your Reps</h1>
+<header class="center-inline">
+    <h1>Your Representatives</h1>
     <div>Your zipcode: Location</div>
 </header>
-<main>
+<main class="">
     <section>
-        <h3>House</h3>
+        <div class="center-inline">
+            <h3 class="">House</h3>
+        </div>
         {{#each house as |rep|}}
-        <article>
-            <div class="rep-pic">
-                <i></i>
-            </div>
-            <div class="rep-name">
-                {{rep.fullName}}
-            </div>
-            <div class="rep-party">
-                {{rep.party}}
-            </div>
-        </article>
+        <div class="width-8 center-block soft-borders-5px">
+            <a href="/rep/?bioguide_id={{rep.bioguideId}}">
+                <article class="flex align-center">
+                    <div class="rep-pic">
+                        <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
+                    </div>
+                    <div class="rep-info">
+                        <div class="rep-name">
+                            {{rep.fullName}}
+                        </div>
+                        <div class="rep-party">
+                            {{rep.party}}
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
         {{/each}}
+        </div>
     </section>
     <section>
-        <h3>Senate</h3>
+        <div class="center-inline">
+            <h3>Senate</h3>
+        </div>
         {{#each senate as |rep|}}
-            <article>
-                <div class="rep-pic">
-                    <i></i>
-                </div>
-                <div class="rep-name">
-                    {{rep.fullName}}
-                </div>
-                <div class="rep-party">
-                    {{rep.party}}
-                </div>
-            </article>
+        <div class="width-8 center-block soft-borders-5px">
+            <a href="/rep/?bioguide_id={{rep.bioguideId}}">
+                <article class="flex align-center">
+                    <div class="rep-pic">
+                        <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{rep.bioguideId}}.jpg">
+                    </div>
+                    <div class="rep-info">
+                        <div class="rep-name">
+                            {{rep.fullName}}
+                        </div>
+                        <div class="rep-party">
+                            {{rep.party}}
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
         {{/each}}
     </section>
 </main>
