@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
   console.log("ready working");
+  updateBoxes();
   $(document.body).on("keyup", function(event) {
     var keyPressed = event.key;
     var digitRegEx = /\d/;
