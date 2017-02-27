@@ -3,7 +3,19 @@
 <form id="find-reps" method="get" action="/zip/">
     <div>
         <label for="zipcode" form="find-reps">Zipcode</label>
-        <input type="text" id="zipcode" name="zipcode" form="find-reps" placeholder="Zipcode">
+        <div class="zipcode-display flex">
+          <div class="zipcode">
+          </div>
+          <div class="zipcode">
+          </div>
+          <div class="zipcode">
+          </div>
+          <div class="zipcode">
+          </div>
+          <div class="zipcode">
+          </div>
+        </div>
+        <input type="hidden" id="zipcode" name="zipcode" form="find-reps" placeholder="Zipcode">
     </div>
     <button type="submit" form="find-reps">Find your reps!</button>
 </form>
