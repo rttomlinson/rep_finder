@@ -58,16 +58,16 @@ function updateBoxes() {
 function advanceMarker() {
     let $activeZip = $(".active-zip");
     let $nextZip = $activeZip.next();//remove active-marker, put marker on next sibling
-    if ($nextZip) {//if active marker is last marker, do something special
+    if ($nextZip.length) {//if active marker is last marker, do something special
         $activeZip.removeClass("active-zip");
         $nextZip.addClass("active-zip");
     }
 }
 function reverseMarker() {
     let $activeZip = $(".active-zip");
-    let $nextZip = $activeZip.prev();//remove active-marker, put marker on prev sibling
-    if ($nextZip) {//if active marker is first marker, do something special
+    let $prevZip = $activeZip.prev();//remove active-marker, put marker on prev sibling
+    if ($prevZip.length) {//if active marker is first marker, do something special
         $activeZip.removeClass("active-zip");
-        $nextZip.addClass("active-zip");
+        $prevZip.addClass("active-zip");
     }
 }
