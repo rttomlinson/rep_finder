@@ -68,10 +68,6 @@ img {
   width: 100%;
 }
 
-.center-block {
-  margin: 0 auto;
-}
-
 .center-inline {
   text-align: center;
 }
@@ -104,10 +100,33 @@ img {
 .zipcode {
   width: 45px;
   height: 50px;
-  background-color: yellow;
   border-radius: 10px;
   margin: 0 5px;
   border: 1px solid #ddd;
   font-size: 24px;
   font-weight: bold;
+}
+
+.button-holder {
+    border: 1px solid black;
+    overflow: hidden;
+    height: 0;
+    transition: height 1s;
+}
+
+
+
+.active-zip {
+  background-color: yellow;
+}
+
+.submit-wrapper {
+  padding: 20px;
+  overflow: hidden;
+  height: 0;
+  transition: height 1s;
+}
+
+.activate-button {
+  height: 60px;
 }

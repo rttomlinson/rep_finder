@@ -15,9 +15,11 @@ $(document).ready(function() {
     } else if (digitRegEx.test(keyPressed)) { //match to regex expression
         if (inputArray.length < 5) {
           inputArray.push(keyPressed);
+          $(".submit-wrapper").removeClass("activate-button");
           printArray();
           updateBoxes();
         } else {
+            $(".submit-wrapper").addClass("activate-button");
           console.log("Max length");
         }
     }
