@@ -15,11 +15,9 @@ $(document).ready(function() {
     } else if (digitRegEx.test(keyPressed)) { //match to regex expression
         if (inputArray.length < 5) {
           inputArray.push(keyPressed);
-          $(".submit-wrapper").removeClass("activate-button");
           printArray();
           updateBoxes();
         } else {
-            $(".submit-wrapper").addClass("activate-button");
           console.log("Max length");
         }
     }
@@ -50,4 +48,26 @@ function updateBoxes() {
     var zipChar = inputArray[index] ? inputArray[index] : "-";
     $(element).text(zipChar);
   });
+  if (inputArray.length == 5) {
+    $(".submit-wrapper").addClass("activate-button");
+  } else {
+    $(".submit-wrapper").removeClass("activate-button");
+  }
+}
+
+function advanceMarker() {
+    let $activeZip = $(".active-zip");
+    let $nextZip = $activeZip.next();//remove active-marker, put marker on next sibling
+    if ($nextZip) {//if active marker is last marker, do something special
+        $activeZip.removeClass("active-zip");
+        $nextZip.addClass("active-zip");
+    }
+}
+function reverseMarker() {
+    let $activeZip = $(".active-zip");
+    let $nextZip = $activeZip.prev();//remove active-marker, put marker on prev sibling
+    if ($nextZip) {//if active marker is first marker, do something special
+        $activeZip.removeClass("active-zip");
+        $nextZip.addClass("active-zip");
+    }
 }

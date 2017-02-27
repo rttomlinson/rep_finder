@@ -121,7 +121,6 @@ img {
 }
 
 .submit-wrapper {
-  padding: 20px;
   overflow: hidden;
   height: 0;
   transition: height 1s;
@@ -129,4 +128,8 @@ img {
 
 .activate-button {
   height: 60px;
+}
+
+button {
+  margin: 20px;
 }
