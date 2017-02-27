@@ -105,19 +105,21 @@ img {
   border: 1px solid #ddd;
   font-size: 24px;
   font-weight: bold;
+  background-color: #ffffff;
+  transition: background-color .5s;
 }
 
 .button-holder {
     border: 1px solid black;
     overflow: hidden;
     height: 0;
-    transition: height 1s;
+    transition: height .75s;
 }
 
 
 
 .active-zip {
-  background-color: yellow;
+  background-color: #ffff00;
 }
 
 .submit-wrapper {

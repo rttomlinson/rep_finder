@@ -9,13 +9,13 @@ $(document).ready(function() {
     if (keyPressed == "Backspace") {//delete key
       if (inputArray.length > 0) {
         inputArray.pop();//pop from array
-        printArray();
+        reverseMarker();
         updateBoxes();
       }
     } else if (digitRegEx.test(keyPressed)) { //match to regex expression
         if (inputArray.length < 5) {
           inputArray.push(keyPressed);
-          printArray();
+          advanceMarker();
           updateBoxes();
         } else {
           console.log("Max length");
@@ -23,7 +23,6 @@ $(document).ready(function() {
     }
   });
   $("#find-reps").on("submit", function (event) {
-    console.log("handler for submit called");
     if (inputArray.length == 5) {
       $("#zipcode").val(inputArray.join(""));
     } else {
