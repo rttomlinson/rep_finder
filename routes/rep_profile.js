@@ -12,10 +12,12 @@ router.get('/', function(req, res, next) {
     let bioguideId = req.query.bioguide_id;
     
     let repVotes = sunlight.getMostRecentVotes(bioguideId); //method falls return promises
+    let repInfo = sunlight.getRepContactInfo(bioguideId);
     
-    repVotes.then(function onFulfill(data) {
-        let bills = cleanVoteData(data);
-        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId });
+    Promise.all([repVotes, repInfo]).then(function onFulfill(data) {
+        let bills = sunlight.cleanVoteData(data[0]);
+        let info = sunlight.cleanRepContactInfo(data[1]);
+        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId, "repInfo" : info });
 
     }).catch(function onError(error) {
         console.log(error);
@@ -72,18 +74,39 @@ Pretty data for voting records
 
 
 */
-function cleanVoteData(data) {
-    let cleanedData = [];
-    data.results.forEach(function (element, index, arr) {
-        let holderObj = {};
-        holderObj["bill_id"] = element.bill.bill_id;//billid from element
-        holderObj["bill_title"] = element.bill.official_title;
-        holderObj["recorded_vote"] = element.voter_ids[Object.getOwnPropertyNames(element.voter_ids)[0]];
-        cleanedData.push(holderObj);
-    });
-    return cleanedData;
+
+/*--------------------------Clean Rep Data----------------------------*/
+/* Clean form should follow this schema
+
+{
+    "fullName" : [string],
+    "phoneNumber" : [string],
+    "email" : [string],
+    "seat" : [string],
+    "party" : [string],
+    "contactForm" : [string]
 }
 
+
+Form expected from API call
+
+{
+    "results" : [ {
+            "aliases" : [Array],
+            "contact_form" : [string] or null,
+            "party" : [string],
+            "phone" : [string],
+            "title" : [string],
+            "website" : [string]
+        },
+    
+    ],
+    "count": [number],
+    "page": [Object]
+}
+
+
+*/
 
 
 module.exports = router;
