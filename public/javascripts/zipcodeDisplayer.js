@@ -28,14 +28,14 @@ function MakeBoxes(num) {
         $zipDiv.appendTo($zipDisplay);//append it to zipcode-display
     }
     this.inputArray = [];
-    this.zipcodeUpdater = makeZipcodeUpdater.bind(this);
-    this.submitChecker = makeSubmitChecker.bind(this);
-    this.updateBoxes = makeBoxUpdater.bind(this);
+    this.zipcodeUpdater = zipcodeUpdater.bind(this);
+    this.submitChecker = submitChecker.bind(this);
+    this.updateBoxes = boxUpdater.bind(this);
     this.advanceMarker = advanceMarker;
     this.reverseMarker = reverseMarker;
     
     
-    function makeBoxUpdater() { //Needs to be in reference to the boxes instance. Currently in reference to the Div Element
+    function boxUpdater() { //Needs to be in reference to the boxes instance. Currently in reference to the Div Element
         let inputArray = this.inputArray;
           $(".zipcode").each(function (index, element) {
             var zipChar = inputArray[index] ? inputArray[index] : "-";
@@ -64,7 +64,7 @@ function MakeBoxes(num) {
             $prevZip.addClass("active-zip");
         }
     }
-    function makeSubmitChecker(event) {
+    function submitChecker(event) {
             if (this.inputArray.length == 5) {
               $("#zipcode").val(this.inputArray.join(""));
             } else {
@@ -73,7 +73,7 @@ function MakeBoxes(num) {
             }
         
     }
-    function makeZipcodeUpdater(event) {
+    function zipcodeUpdater(event) {
             var keyPressed = event.key;
             var digitRegEx = /\d/;
             if (keyPressed == "Backspace") {//delete key
