@@ -10,10 +10,6 @@ $(document).ready(function() {
   $("#find-reps").on("submit", boxes.submitChecker);
   formToSubmitOnEnter($("#find-reps"));
   
-  
-  /*Set height of submit-wrapper and add hidden class*/
-
-  
 });
 
 
