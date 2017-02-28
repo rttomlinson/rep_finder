@@ -8,6 +8,7 @@ $(document).ready(function() {
     //use make boxes function to get a function that references the inputArray and has access to helper methods of makeBoxes
   $(document.body).on("keyup", boxes.zipcodeUpdater)
   $("#find-reps").on("submit", boxes.submitChecker);
+  formToSubmitOnEnter($("#find-reps"));
 });
 
 
@@ -90,10 +91,7 @@ function MakeBoxes(num) {
                 } else {
                   console.log("Max length");
                 }
-            } else if (keyPressed == "Enter") {
-              $("#find-reps").submit();
             }
-        
     }
     //return {}; //object with references to these functions
 }
@@ -199,3 +197,12 @@ let advanceAndPreviousMarkers = {
         }
     }    
 };
+
+
+function formToSubmitOnEnter(formElement) {
+  $(document).on("keyup", function(event) {
+    if (event.key == "Enter") {
+      $(formElement).submit();
+    }
+  });
+}
