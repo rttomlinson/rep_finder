@@ -3,7 +3,7 @@
 $(document).ready(function() {
   console.log("ready working");
   //Initialize Boxes
-  let boxes = new MakeBoxes(5);
+  let boxes = new MakeBoxes(5); //Uses function Constructor Style
   // will find the .zipcode-display div and create 5 .zipcode divs inside and set the first one to active
     //use make boxes function to get a function that references the inputArray and has access to helper methods of makeBoxes
   $(document.body).on("keyup", boxes.zipcodeUpdater)
@@ -90,6 +90,8 @@ function MakeBoxes(num) {
                 } else {
                   console.log("Max length");
                 }
+            } else if (keyPressed == "Enter") {
+              $("#find-reps").submit();
             }
         
     }
@@ -132,26 +134,26 @@ let advanceAndPreviousMarkers = {
             $zipDiv.appendTo($zipDisplay);//append it to zipcode-display
         }
         this.inputArray = [];
-        this.zipcodeUpdater = this.makeZipcodeUpdater.bind(this);
-        this.submitChecker = this.makeSubmitChecker.bind(this);
-        this.updateBoxes = this.makeBoxUpdater.bind(this);
+        this.zipcodeUpdater = this.zipcodeUpdater.bind(this);
+        this.submitChecker = this.submitChecker.bind(this);
+        this.updateBoxes = this.boxUpdater.bind(this);
     },
     
     
-    "makeBoxUpdater" : function makeBoxUpdater() { //Needs to be in reference to the boxes instance. Currently in reference to the Div Element
-        
+    "boxUpdater" : function makeBoxUpdater() { //Needs to be in reference to the boxes instance. Currently in reference to the Div Element
+          let inputArray = this.inputArray; //There's got to be a better way to organize this
           $(".zipcode").each(function (index, element) {
-            var zipChar = this.inputArray[index] ? this.inputArray[index] : "-";
+            var zipChar = inputArray[index] ? inputArray[index] : "-";
             $(element).text(zipChar);
           });
-          if (this.inputArray.length == 5) {
+          if (inputArray.length == 5) {
             $(".submit-wrapper").addClass("activate-button");
           } else {
             $(".submit-wrapper").removeClass("activate-button");
           }
     },
 
-    "makeSubmitChecker" : function makeSubmitChecker(event) {
+    "submitChecker" : function makeSubmitChecker(event) {
             if (this.inputArray.length == 5) {
               $("#zipcode").val(this.inputArray.join(""));
             } else {
@@ -160,7 +162,7 @@ let advanceAndPreviousMarkers = {
             }
         
     },
-    "makeZipcodeUpdater" : function makeZipcodeUpdater(event) {
+    "zipcodeUpdater" : function makeZipcodeUpdater(event) {
             var keyPressed = event.key;
             var digitRegEx = /\d/;
             if (keyPressed == "Backspace") {//delete key
