@@ -1,20 +1,24 @@
  <main class="container-fluid main-container">   
     <section class="row text-center"> 
-        <div class="rep-pic col-xs-12">
+        <div class="rep-pic col-xs-12 padding-top-10 padding-bot-10">
             <img class="soft-borders-5px" src="https://theunitedstates.io/images/congress/225x275/{{bioguideId}}.jpg" alt="Picture of representative">
             <div>Rep Name and Seat</div>
         </div>
     
-        <div class="contact-info col-xs-12">
-            <h4>Contact Info</h4>
-            <div class="wrapper">
-                <div class="phone-number">
-                    <h5>Phone Number</h5>
-                    <div>###-###-####</div>
-                </div>
-                <div class="email">
-                    <h5>Email</h5>
-                    <div>superrepman@gmail.com</div>
+        <div class="contact-info col-xs-12 padding-top-10 padding-bot-10">
+            <div class="row">
+                <h4 class="col-xs-12">Contact Info</h4>
+            </div>
+            <div class="row">
+                <div class="wrapper background-white padding-around-10 text-left soft-borders-5px gray-border-1px display-inline-block">
+                    <div class="phone-number">
+                        <h5 class="font-deemphasize">Phone Number</h5>
+                        <div>###-###-####</div>
+                    </div>
+                    <div class="email">
+                        <h5 class="font-deemphasize">Email</h5>
+                        <div>superrepman@gmail.com</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,11 +26,12 @@
     
     
     <section class="row">
+        <h4 class="text-center">Recent Votes</h4>
         {{#each bills as |bill|}}
         <article class="bill col-xs-12 vote-box">
-            <div class="bill-id">
+            <h4 class="bill-id">
                 {{bill.bill_id}}
-            </div>
+            </h4>
             <div class="bill-title">
                 {{bill.bill_title}}
             </div>
