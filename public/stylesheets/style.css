@@ -148,6 +148,21 @@ img {
   display: inline-block;
 }
 
+.font-deemphasize {
+  color: #333;
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-size-1-2em {
+  font-size: 1.2em;
+}
 
 button {
   margin: 20px;
