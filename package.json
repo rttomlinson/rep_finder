@@ -7,7 +7,7 @@
   },
   "engines" : {
     "node" : "7.6.0"
-  }
+  },
   "dependencies": {
     "@rttomlinson/sunlight_api_wrapper": "^1.0.1",
     "body-parser": "~1.16.0",
