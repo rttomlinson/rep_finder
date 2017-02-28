@@ -69,11 +69,6 @@ img {
   width: 100%;
 }
 
-.width-1, .width-2, .width-3, .width-4, .width-5, .width-6, .width-7, .width-8, .width-9, .width-10, .width-11, .width-12 {
-  padding: 20px;
-}
-
-
 .center-inline {
   text-align: center;
 }
@@ -91,8 +86,16 @@ img {
   font-size: 20px;
 }
 
+.padding-around-20 {
+  padding: 20px;
+}
+
 .padding-bot-10 {
   padding-bottom: 10px;
+}
+
+.padding-top-sides-5-20 {
+  padding: 5px 20px;
 }
 
 .margin-right-20 {
@@ -154,6 +157,14 @@ img {
 
 .background-white {
   background-color: #fff;
+}
+
+.background-soft-blue {
+  background-color: #A9A9D1;
+}
+
+.background-soft-red {
+  background-color: #FFAFA2;
 }
 
 .font-bold {
