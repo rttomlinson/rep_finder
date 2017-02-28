@@ -9,6 +9,11 @@ $(document).ready(function() {
   $(document.body).on("keyup", boxes.zipcodeUpdater)
   $("#find-reps").on("submit", boxes.submitChecker);
   formToSubmitOnEnter($("#find-reps"));
+  
+  
+  /*Set height of submit-wrapper and add hidden class*/
+
+  
 });
 
 
@@ -43,9 +48,9 @@ function MakeBoxes(num) {
             $(element).text(zipChar);
           });
           if (inputArray.length == 5) {
-            $(".submit-wrapper").addClass("activate-button");
+            $(".submit-wrapper").addClass("height-60");
           } else {
-            $(".submit-wrapper").removeClass("activate-button");
+            $(".submit-wrapper").removeClass("height-60");
           }
     }
     

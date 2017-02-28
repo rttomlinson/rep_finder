@@ -145,16 +145,18 @@ img {
   background-color: #ffff00;
 }
 
-.submit-wrapper {
-  overflow: hidden;
-  height: 0;
-  transition: height 1s;
+.transition-1s {
+  transition: 1s;
 }
 
-.activate-button {
-  height: 60px;
+.overflow-hidden {
+  overflow:hidden;
+  height:0;
 }
 
+.height-60 {
+  height:60px;
+}
 .display-inline-block {
   display: inline-block;
 }
