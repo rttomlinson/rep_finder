@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 let zip = require('./routes/zip');
-let repVote = require('./routes/rep_profile');
+let repVote = require('./routes/rep_votes');
 
 var app = express();
 
