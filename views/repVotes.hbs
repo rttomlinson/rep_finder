@@ -19,12 +19,16 @@
                     </div>
                     <div class="website">
                         <h5 class="font-deemphasize">Website</h5>
-                        <div>{{repInfo.website}}</div>
+                        <a href="{{repInfo.website}}">
+                            <div>{{repInfo.website}}</div>
+                        </a>
                     </div>
                     {{#if repInfo.contactForm}}
                     <div class="contact-form">
                         <h5 class="font-deemphasize">Contact Form</h5>
-                        <div>{{repInfo.contactForm}}</div>
+                        <a href="{{repInfo.contactForm}}">
+                            <div>{{repInfo.contactForm}}</div>
+                        </a>
                     </div>
                     {{/if}}
                 </div>
@@ -38,7 +42,9 @@
         {{#each bills as |bill|}}
         <article class="bill col-xs-12 vote-box">
             <h4 class="bill-id">
-                {{bill.bill_id}}
+                <a href="{{bill.bill_website}}">
+                    {{bill.bill_id}}
+                </a>
             </h4>
             <div class="bill-title">
                 {{bill.bill_title}}

@@ -146,7 +146,7 @@ img {
     border: 1px solid black;
     overflow: hidden;
     height: 0;
-    transition: height .75s;
+    transition: height .5s;
 }
 
 .active-zip {
