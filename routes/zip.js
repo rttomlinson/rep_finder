@@ -10,7 +10,8 @@ let sunlight  = new Sunlight();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     let zipcode = req.query.zipcode;
-    
+    let landingPageUrl = req.protocol + "://" + req.hostname;
+    console.log(landingPageUrl);
     let repsByZip = sunlight.getRepsByZipcode(zipcode); //method falls return promises
     
     repsByZip.then(function onFulfill(data) { //expect data to be a JS object
@@ -26,7 +27,7 @@ router.get('/', function(req, res, next) {
                 prettyData.house.push(cleanedData);
             }
         });
-        res.render('repsByZip', { "house": prettyData.house, "senate": prettyData.senate });
+        res.render('repsByZip', { "house": prettyData.house, "senate": prettyData.senate, "zipcode" : zipcode, "landingPageUrl" : landingPageUrl });
     }).catch(function onError(error) {
         res.render('error.hbs');
     });
