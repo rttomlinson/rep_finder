@@ -9,7 +9,7 @@
     "node" : "7.6.0"
   },
   "dependencies": {
-    "@rttomlinson/sunlight_api_wrapper": "^1.0.1",
+    "@rttomlinson/sunlight_api_wrapper": "^1.0.7",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
