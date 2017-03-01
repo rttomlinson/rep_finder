@@ -10,14 +10,14 @@ let sunlight  = new Sunlight();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     let bioguideId = req.query.bioguide_id;
-    
+    let landingPageUrl = req.protocol + "://" + req.hostname;    
     let repVotes = sunlight.getMostRecentVotes(bioguideId); //method falls return promises
     let repInfo = sunlight.getRepContactInfo(bioguideId);
     
     Promise.all([repVotes, repInfo]).then(function onFulfill(data) {
         let bills = sunlight.cleanVoteData(data[0]);
         let info = sunlight.cleanRepContactInfo(data[1]);
-        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId, "repInfo" : info, "layout" : "rep_votes_layout.hbs" });
+        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId, "repInfo" : info, "layout" : "rep_votes_layout.hbs", "landingPageUrl" : landingPageUrl });
 
     }).catch(function onError(error) {
         console.log(error);

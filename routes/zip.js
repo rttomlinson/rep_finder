@@ -11,7 +11,6 @@ let sunlight  = new Sunlight();
 router.get('/', function(req, res, next) {
     let zipcode = req.query.zipcode;
     let landingPageUrl = req.protocol + "://" + req.hostname;
-    console.log(landingPageUrl);
     let repsByZip = sunlight.getRepsByZipcode(zipcode); //method falls return promises
     
     repsByZip.then(function onFulfill(data) { //expect data to be a JS object
