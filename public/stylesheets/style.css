@@ -197,6 +197,10 @@ img {
   font-size: 1.2em;
 }
 
+.font-size-2em {
+  font-size: 2em;
+}
+
 button {
   margin: 20px;
 }
@@ -214,6 +218,11 @@ button {
 .gray-border-1px {
   border: 1px solid #b9b9b9;
 }
+
+.background-eggshell-to-white {
+  background: linear-gradient( 180deg, #ffffee, #ffffff);
+}
+
 
 #to-landing-page::after {
   content: "Try another zipcode";
