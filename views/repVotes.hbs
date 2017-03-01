@@ -40,7 +40,7 @@
     <section class="row">
         <h4 class="text-center">Recent Votes</h4>
         {{#each bills as |bill|}}
-        <article class="bill col-xs-12 vote-box">
+        <article class="bill col-xs-12 vote-box gray-border-1px">
             <h4 class="bill-id">
                 <a href="{{bill.bill_website}}">
                     {{bill.bill_id}}
@@ -49,7 +49,7 @@
             <div class="bill-title">
                 {{bill.bill_title}}
             </div>
-            <div class="vote-record">
+            <div class="vote-record hidden">
                 {{bill.recorded_vote}}
             </div>
         </article>

@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
     Promise.all([repVotes, repInfo]).then(function onFulfill(data) {
         let bills = sunlight.cleanVoteData(data[0]);
         let info = sunlight.cleanRepContactInfo(data[1]);
-        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId, "repInfo" : info });
+        res.render('repVotes', { "bills" : bills, "bioguideId" : bioguideId, "repInfo" : info, "layout" : "rep_votes_layout.hbs" });
 
     }).catch(function onError(error) {
         console.log(error);
