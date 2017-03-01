@@ -14,19 +14,8 @@ router.get('/', function(req, res, next) {
     let repsByZip = sunlight.getRepsByZipcode(zipcode); //method falls return promises
     
     repsByZip.then(function onFulfill(data) { //expect data to be a JS object
-        let prettyData = {
-            "senate" : [],
-            "house" : []
-        };
-        data.results.forEach(function (element, index, arr) {
-            let cleanedData = cleanRepData(element);
-            if (element.chamber == "senate") {
-                prettyData.senate.push(cleanedData);
-            } else {
-                prettyData.house.push(cleanedData);
-            }
-        });
-        res.render('repsByZip', { "house": prettyData.house, "senate": prettyData.senate, "zipcode" : zipcode, "landingPageUrl" : landingPageUrl });
+        let cleanedData = sunlight.cleanRepsByZipcodeData(data); //data is returned to us in the form as stated below
+        res.render('repsByZip', { "house": cleanedData.house, "senate": cleanedData.senate, "zipcode" : zipcode, "landingPageUrl" : landingPageUrl });
     }).catch(function onError(error) {
         res.render('error.hbs');
     });
