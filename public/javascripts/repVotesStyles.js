@@ -1,6 +1,11 @@
 "use strict";
 
 $(document).ready(function(event) {
+    colorVoteBoxes();
+});
+
+
+function colorVoteBoxes() {
     $(".vote-box").each(function (index, element) {
         let $this = $(this);
         let vote = $this.find(".vote-record").text().trim(); //Use JS native trim method
@@ -10,4 +15,4 @@ $(document).ready(function(event) {
             $this.addClass("nay-border");
         }
     });
-});
+}
