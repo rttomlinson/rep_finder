@@ -230,6 +230,10 @@ button {
   background: linear-gradient( 180deg, #ffffee, #ffffff);
 }
 
+header h1:hover {
+  font-weight: bold;
+}
+
 
 #to-landing-page::after {
   content: "Try another zipcode";
